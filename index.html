@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Breakout</title>
+    <style media="screen">
+      * { padding: 0; margin: 0 }
+      canvas { background: #eee; display: block; margin: 0 auto; }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="400" height="320"></canvas>
+
+    <script type="text/javascript">
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+
+      // drawing a rectangle
+      ctx.beginPath(); // start drawing
+      ctx.rect(20, 40, 50, 50); // (coordinate x, coordinate y, length, height)
+      ctx.fillStyle = "#FF0000"; // fill colour
+      ctx.fill(); // fill in the rectangle
+      ctx.closePath(); // finish drawing
+
+      // drawing a circle
+      ctx.beginPath();
+      ctx.arc(240, 160, 8, 0, Math.PI*2, false);
+      ctx.fillStyle = "green";
+      ctx.fill();
+      ctx.closePath();
+
+      // drawing a rectangle with an outline and no fill
+      ctx.beginPath();
+      ctx.rect(160, 10, 100, 40);
+      ctx.strokeStyle = "rgba(0, 0, 255, 0.5)"; // colour for the outline
+      ctx.stroke(); // outline the shape, rather than filling
+      ctx.closePath();
+    </script>
+  </body>
+</html>
